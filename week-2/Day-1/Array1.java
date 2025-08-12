@@ -13,7 +13,6 @@ public class Array1 {
         arr1[1] = 10;
         arr1[2] = 15;
         arr1[3] = 20;
-        arr1[4] = 25;
 
         //printing arrays
         System.out.println("arr1: " + Arrays.toString(arr1));

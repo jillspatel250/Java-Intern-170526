@@ -1,0 +1,9 @@
+in java we have lots of file and all are same so that we can combine and that call package
+
+packages are nothing but a collection of set of classes , interfaces and sub packages
+
+
+we have two ways to use class
+1.using making that object
+2.extends that class
+

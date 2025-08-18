@@ -1,0 +1,45 @@
+in java we have lots of file and all are same so that we can combine and that call package
+
+packages are nothing but a collection of set of classes , interfaces and sub packages
+
+
+we have two ways to use class
+1.using making that object
+2.extends that class
+
+
+//1. same class
+//2. same package non-sub class
+//3. same package sub-class
+//4. diff package sub-class
+//5. diff package non-subclass
+
+package mypack1;
+//same package same class or same package non-sub class
+class Test{
+
+
+}
+//same packge sub-class
+class Test2 extends Test{
+
+
+}
+
+
+//different package
+package myPack2;
+//diff package non-sub class
+class Testd1{
+
+
+}
+
+//diff package sub-class
+class Test2d extends Test1d{
+
+
+}
+
+
+

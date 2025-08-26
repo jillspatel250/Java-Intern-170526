@@ -1,0 +1,10 @@
+//generic Type safe in this only string is we add otherwise throw error 
+//this is not proper generic but we make that is generic to make type safety 
+//gereic provide type safety of any objects
+-- List<String> list=new ArrayList<>();
+//in this we add int so it give error at compile time it self
+
+
+//non=generic not type safe , in this we add any type of value in this 
+List anotherlist=new ArrayList();
+

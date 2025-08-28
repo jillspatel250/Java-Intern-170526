@@ -1,0 +1,664 @@
+⭐️Visibility Porblem:-
+In multithreading, when two or more threads share the same variable (like a flag), they may not immediately see the latest updated value of that variable because each thread can keep a local cached copy.
+
+So, if Thread A updates the flag, Thread B might still see the old value, leading to incorrect behavior.
+
+So we use SharedCache so if any change in local chace is flush to shared cache and it is refresh by another thread in that local cache
+Image:-Visibility-Porb-Solution.jpg
+So in simeple term what is visibility porblem:-
+2 thread che t1 and t2 and banne jode temno local cache che and both use shared same flag
+so ek thread t1 change karse flag ma toh e ena local cache ma j rehse so e change value t2 ne nai dekhay
+so ene visbility problem kehvay
+And Solution is:-Shared Cache
+Code Solution:-Add volatile Keyword in flag
+boolean flag= true -> volatile boolean flag=true
+ so aa karsu toh flag ma value change thase toh dekhase badha thread ne
+
+⭐️Synchronized Problem:-
+image:-Synchronized Problem.jpg
+in this same probelm
+example :- we have two thread t1,t2 and one flag volatile int value=1;
+in this same probelm
+t1{
+read(value)
+write(value++)
+}
+t2{
+read(value)
+write(value++)
+}
+so both same time read and thread 1 update value 1->2 so now valus is 1 but before updating
+t2 also read same value so t2 have value=1 so they also add 1->2 so their is synchronized prob...
+see in image...
+And ama volatile lakhvathi e kasu nai thayy ama read and write 2 operation che etle
+Soltuion-1:- we use Synchronized keyword / synchronized block e block na thread nu work pati jase pachi j
+            e bija thread ne flag use karva dese e block ma jaine
+Soltuion-2:-AtomicInteger value=new AtomicInteger(1);
+          this class have single method called incerement()
+          and its maniitain both operation and read and write of all thread
+          and make sure all operation is compund operation
+          A compound operation is an operation that looks like a single step in code but actually involves multiple smaller steps(like read,write,update) at the machine level.
+           Many Methods for various compund operations:-
+           1.IncementAndGet
+           2.decrementAndGet
+           3.addAndGet(int a)
+           4.compareAndSet(int expectedValue,int newValue) IMP methods
+
+NOTE:-
+If visibility problem use -> volatile keyword
+If need compound operation or need to do atomically use-> Atomic Variable
+
+⭐ThreadLocal In java:-
+ThreadLocal is like a special box of variables where each thread gets its own copy of the variable.
+Normally, if multiple threads share a variable → they see the same value (and may interfere).
+With ThreadLocal → each thread sees its own private value, even though the variable name is the same.
+
+UseCases:-
+1.Thread Confinement(Safety)
+2.Per Thread Object for pref
+3.Per Thread Context
+
+Usages Tips:-
+1.CleanUp once out of scope(Once the processing is done then cleanup resouces)
+2.Use Local Varaiales
+3.Delegeate to framework(like Spring use this concept )
+
+
+--------------
+Parallellism:-
+doing lot of things at once..
+
+Tools to enable Parallelism:-
+1.Threads
+2.ThreadPool
+  - ExecutorService
+  -ForkJoinPool
+  - CustomThreadPools (eg. web servers)
+3.Requires > 1 CPU core(if > 1 core then and then we use threadLocal..)
+
+
+Concurrency:-
+Concurrency means doing multiple tasks at the same time (progressing together).
+image:-Concurrncy.jpg
+in that one core is their and two thread is their so scheduler work is to manage that thread and give
+same amount of time each thread in cpu ..
+
+image:-concurrency-best-case.jpg
+availableticket is a shared variable
+best scenario is 1 thread run check shared varaible and then book ticket and update after thread2 is start ...
+but this is not possible one thread run after that second thread is start...
+
+image:-councurrency-image-2.jpg
+but in this program is incorrect because 1st both check > 0 and if ticket count is only 1
+then both is book and avail-- so its not working code...
+
+image:-concurrency-image-3.jpg
+in that mulitple thread or core is their but that is also not sure process is ...
+so we need one solution so we use locks..
+
+fix this problem one of the possible solution is Locks..
+image:-concurrency-locks
+
+Tools to deals with concurrency:-
+1.Locks / use synchroized keyword
+2. Atomic classes
+3.cocurrent data strcutre(concurrentHashMap , BlockingQueue)
+4.CompletableFuture
+5.Countdownlatch / phaser / cyclicBarrier /semaphore
+
+
+
+JMM(Java Memory Model):-it is a specification which guarantees visbility of fileds reordering of instructions.
+The Java Memory Model (JMM) is a set of rules that tell us how:
+Threads see (read/write) shared variables (fields).
+Changes in one thread become visible to other threads.
+CPU and compiler reordering (optimization) is allowed or no
+JMM model ensure that one program is run on one jvm if we pick that program and run in different JVM then
+then also is run correctly ..
+
+NOTE:-
+1 java Thread = 1 OS thread
+
+------------
+ExecutorService:-
+ExecutorService is like a thread manager / thread pool.
+
+What is a Ideal Pool Size:-
+run this :- System.out.println(Runtime.getRuntime().availableProcessors());
+and this ans is our ideal pool size
+Runtime.getRuntime() this gives you current JVM environment.
+availableProcessors() this returns the number of processors/cores that the JVM sees and can use.
+
+
+ThreadPools:-
+Java Provide 4 types of ThreadPools.
+syntax :-   ExecutorService service= Executors.newFixedThreadPool(size);
+
+1.FixedThreadPool
+  there is a fixed no of threads
+  and queue is their based on turn task is asssign and run...
+
+2.CachedThraedPool
+syntax:- ExecutorService service=Executors.newCachedThreadPool();
+  A pool that creates new threads when needed, but reuses old ones if they are free.
+  in this synchronous queue is their if all threads are busy then create a new thread for the task and place it in the pool
+  No fixed size → it can grow as many threads as needed (up to system limits).
+  If a thread becomes idle for 60 seconds, it is removed.
+
+3.ScheduledThreadPool
+  it is use when we have certain kinf of task that we want to run after certain time of delay..
+  in this Delay Queue is used ...
+  methods like:-
+  syntax:-service.schedule(new Task(),10,SECONDS);
+  service.schedule -> ama 10 sec no dealay hase toh 10 second pachi e task run thase
+
+  syntax:-service.scheduleAtFixedRate(new Task(),15,10,SECONDS);
+  service.scheduleAtFixedRate -> start after 15 sec and after that ama after every 10 sec task run thase
+
+  syntax:-service.scheduleAtFixedDelay(new Task(),15,10,TimeUnit.SECONDS);
+  service.scheduleAtFixedDelay -> un my task first after 15s, then keep running it repeatedly with a 10s gap after each run finishes.
+
+4.SingleThreadedExecutor
+  this is same as a FixedThreadPool but in this size of pool is only one
+  in this blocking queue is their
+  in this if thread is killed it is recreated ...
+  if we need like this pattern.
+  task 1 -> task 2-> task 3
+  measn task 1 is executed then after that task 2,,,
+
+image:-javaExecutor-Table. this is of corePoolSize and MaxPoolsize,keepAliveTime
+corePoolSize:-initial or based size on thread pool
+CurrentPoolszie:-based on type of pool thread added/deleted based on pool type and keep alive time
+maxPoolsize:-uper thresold of poolsize
+
+------------------------
+Callable interface:-
+we have runnable interface so why we use callable interface
+Runnable interface have one method:-
+public void run(){}
+what if we need to return integer????? so their is no option
+so in that case we use callable interface in that we pass generics type data
+and we need to override call() method
+ class Task implement Callable<Integer>{
+ public Integer call() throws Exception{
+     return 3;
+ }
+ }
+So in simple term if we need any type of in return or Generic we use callable interface
+NOTE:- if we use callable then we this return a handler so we use that example Future<> future=threadPool.submit(()->{}); future is placehplder
+
+
+NOTE:-
+we use callable interface then we need to submit task using .submit() method
+if we use runnable interface then we need to submit task using .execute() method
+
+Future Interface:-
+when async operations is there then we use this
+Future is like a promise of a result that you will get in the future when a background task finishes.
+When you submit a task (Callable or Runnable) to an ExecutorService, it may take time to finish. Instead of blocking immediately, the service gives you a Future object.
+
+Future<Integer> future=service.submit(new Task());
+methods...
+future.get() to get value..
+future.cancel(false); cancel the task
+future.isCancelled(); return if task was cancelled
+future.isDone() return true is task is completed
+
+
+--------------------
+Java Async Programming..
+🔹Synchronous API
+In a synchronous API, the caller waits until the operation is completed before moving to the next line.
+➡️ Synchronous = Blocking + Sequential
+
+🔹Asynchronous (Non-Synchronous) API
+In an asynchronous API, the caller does not wait.
+Asynchronous = Non-blocking (at start) + Background execution
+
+Blocking = current thread waits, can’t do anything else.
+Non-Blocking = current thread continues, doesn’t wait.
+
+Synchronous API → Caller waits for the operation to finish.
+Asynchronous API → Caller does not wait; operation runs in background.
+
+---------------------------------
+🔹Condition Class:-
+in generally we have synchonized keyword,wait(),notify() in object monitors..
+but with lock class we dont have this kind of anythign...
+in that we use Condition class with locks.. it play same role as a wait() and notify()
+
+🔹 How it works
+A thread acquires a Lock.
+That thread can call await() on a Condition → it releases the lock and waits.
+Another thread (with the same lock) can call signal() or signalAll() on the Condition → to wake up waiting threads.
+
+🔹Synchronied vs Lock/Unlock:-(Image:-SynchronizedOrLock.png)
+If we use synchronized, we don’t need to write lock/unlock code — JVM does it automatically.
+But if we use Lock, we get more flexibility and features, at the cost of managing it manually.
+
+----------
+🔹CompletableFuture:-
+this is use for perform Async (Non-blocking) computation and trigger dependent computations which could also be async
+
+Why we use completable feature:-
+image:-CompletableFuture-1.png and CompletableFuture-2.png
+       in that one order is depended on each methods nrich order is depended on fetch order dispatch is depended on payment metho..
+       If we write code for this com.CompletableFuture.Code1
+       all is are blocking orperation means all is done one by one and one after another
+       jya sudhi apde 1st task getOrderTask() complete na kariee tya sudhi agad nu kasu nai thayy
+       Means our main thread not be scale much further...
+       it is mostly like a sequential operations..
+
+image:-CompletableFuture-3.png
+    aa image ma bavv badha thread che je same order per work karse ....
+    in one order means badha thread pot potanai under depended hase but like
+    thread 1 payment per hoy toh second thread send email per e hoi sake
+    toh within thread order ma hase pan badha same order ma nai hoy badha potani rete potana je stages per hase em work karse..
+    so we need like system in CompletableFuture-4.png image we dont care how it implemented
+    ke badha ek j flow ma chalva joiee and badha ek bija thi different rete work kari sake
+    and we dont stop our main thread so in that case we use CompletableFuture..
+    CompletableFuture is a class in Java that helps you run code asynchronously (in the background) and get the result later without blocking your main program.
+
+image:-CompletableFuture-4.png
+   we use CompletableFuture because the main thread dont block and the other thread are running in background
+   so we convert com.CompletableFuture.Code1 -> com.CompletableFuture.Code2
+we have methods called supplayAsync using that all task run async and for chaining task we use .thenApply() or .thenApplyAsync()
+diff betweenn .thenApply() and .thenApplyAsync() is
+.thenApply() aa use karsu toh je ek thread first async getOrder chalu karse ej ena niche na badha task chaining ma completer karse
+.thenApplyAsync() then je thread e async operation chalu karyu evu nai ke ej badha chaining na task complete karse koi thread pool no thread free hase toh e aa task ne complete karine agad value pass kari dese
+
+Simple Term:-
+.thenApply() → continues on the same thread.
+.thenApplyAsync() → may switch to a different thread from the pool.
+
+example:-
+ExecutorService cpuBound=Exceutors.newFixedThreadPool(4);
+ExecutorService isBound=Exceutors.newCachedThreadPool();
+
+//in this main thread will never be block and whole loop is run immidieatly
+        CompletableFuture.supplyAsync(()-> getOrder(),ioBound) //this run using ioBound pool thread
+                .thenApplyAsync(order -> enrich(order),cpuBound) //this run usinf cpuBound pool thread(we use this if we use .thenApplyAsync km ke ema j apde different thread use karine task complete.)
+                .thenApply(order -> performPayment(order))
+                .thenApply(order -> dispatch(order))
+                .thenAccept(order -> sendEmail(order))
+
+
+🚨NOTE:-this same work like CompletableFuture is Reactive Framework and this is mainly use now in industry ...
+Use CompletableFuture if: you just need a few async tasks, simple workflow.
+Use Reactive framework if: you need to handle streams of data, backpressure, error handling, or complex async pipelines.
+reactive frameworks (like Project Reactor, RxJava, Spring WebFlux) instead of just using CompletableFuture.
+USE RXJava this is good...
+
+---------------------------
+Thread Can Block on...
+1.IO operations
+2.Locks
+3.Concurrent Utils(eg. Latches..)
+
+🔹Problem with FixedThreadPool-
+in that the if we have 10 thread size and all 10 thread need one file so all is waiting for that like 10 sec..
+so no one is running and CPU is idel
+
+so we in that if we use CachedThreadPool in that thread limit is not fixed so if all thread are go in wait state so new thread is created...
+
+🔹What is the Core Problem:-
+waiting thread dont't allow scaling (CPU sits idel)
+Threads are expensive(1MB stack) cant create too many
+Task waiting for IO blocks the thread it self
+
+🔹Solve this Problem Use Reactive Programming:-
+ in this insted of waiting of and IO operation thread ask to a reactive framework here is a IO operation once you complete the IO operations
+ here is my algoritham or next methoda that i want to call after IO operations
+ so thread need to submit that things to reactive framework and framework takes care of calling that method once the IO operations is completed..
+NOTE:-So Simple term:- IO block nai thayy thread reactive framework ne kai dese aa karvanu che ana pachi ne potanu kma karva mandse..
+
+WE use this using Flux.. but this Flux has a large-number of methods..
+🔹Problem with Reactive Framework:-
+1.need to learn the huge-number of APIs to work with it
+2.Not east to read and underatand the code
+3.Not easy to debug
+
+WE NEED Light Weight thread and exisiting APIs...
+🔹Solution Java Fibers:-
+this is light Weight + we can keep using exisiting APIs.
+Simple Term:-Ama task block nai thayy IO time e ama task nu current state saved karine bija task ne thread per muki devano
+            after second task complete we resume the first task from that saved state ..
+            Images:-coroutines-1 to coroutines-5
+When a fiber does blocking I/O (like dbCall()),
+→ JVM saves its state, frees the underlying thread, and runs other tasks on it.
+When the I/O finishes,
+→ JVM restores the saved state and continues where it left off.
+ So it looks blocking to your code, but internally it is non-blocking + efficient.
+
+image:-coroutines-6
+fiber means normal small task..
+Java fiber scheduler work is to find free thread and mount that particular fiber on thread as soon as their is any blocking operations
+so its responsibilty of fiber scheduler to unmount that fiber and find another fiber to mound on that
+Simple term fiber means task .... task-1 IO ma jase toh Task-2 ne e thread ma muki devano and task-1 ne unmount kari devano with saved that current thread
+
+
+-------------------------------------------
+🔹Java Basic Lock Functions:-
+Locks allow to restrict the access to the shared resources such that only one thread can access that resource
+
+why we use reentrantLock why this name...??
+Because:-Reentrant lock allow us to call lock() any number of times without calling unlock()
+we know how many time .lock() is called use lock.getHoldCount() this get int number how many time lock is called
+why we say that lock as a reenterant block
+example:-
+public static void accessResource2(){
+        lock.lock();
+        //updated shared resources
+        if(someConditions()){
+            accessResource(); //again reenter.. that go in and aquire same lock.. so this is happend only in thats why we call that is reentrantLock()...
+            //if that reenter in that and lock toh hatu ena jode and pachu unlock karya vagar pachu ema jase toh that retner in same lock so that why we call lock thar reentrantLock..
+        }
+        lock.unlock();
+    }
+
+🔹ReentratnLock have two types
+1.Fair Lock
+2.Bias Lock
+1.Fair Lock:-
+  Lock lock=new ReentrantLock(true);
+  fair lock hase toh example:- 5 thread is their and je thread vadhare wait karyu hase ene lock madse after realesing lock by some thread..
+  means fair chance madse je FIFO type
+
+2.Bias
+  Lock lock=new ReentrantLock(false);
+  if we set fairness to false then it means this lock is give chance in bias way
+  Queue ma 4 thread hase and 1 thread use kare che resource so e release karse so koi new thrread e j time e avse queue ma jaya
+  vagar ene lock madi jase and pehla 4 queue ma j rehse so in that thread is give in bias way ...
+
+
+🔹TryLock method:-
+ tryLock means that try to aquire lock and if that have lock then return true...
+boolean lockAquired=lock.tryLock();
+or we can use timelimit
+boolean lockAquired=lock.tryLock(5,TimeUnit.SECONDS);//5 second ma response apse tryLock methos true or false lock che ke nai
+
+if(lockAquired){
+    try{
+    //access the resouece
+    }finally{
+     lock.unlock();
+    }
+}else{
+//if we could not access lock
+//do alternative thing
+}
+
+------------------------------------------
+🔹ReadWriteLock vs ReentrantLock
+ReentrantLock:-One thread at a time
+ReadWriteLock:- One writer thread at a time OR multiple reader thread at a time but not both reading and writing at a same time
+
+
+
+--------------------------------------
+🔹Java Interrupts:-
+runnable not allow to checkexcecptoions
+callable allow to checkexecptions
+
+simple term:-thread 1 is give task to thread 2 and thread 2 takes too long running operations..
+             so thread 1 is interrupt() that and say stop so thread to may or may not stop is depend on
+             thread 2 .. thread 1 is only interrupt..
+
+simple term:-interrupts are co-operative mechanisams for indicating stop signal to thread..
+             they only say stop .. stop thavu e thread ne ke na thavu e ena per depend kare che
+             interrupts khali kehse stop thaa you take too much time to run that task
+
+why ask Politely?? km interrupts moklieee toh direct stop na kari dey e interrupts e km poiltly key ke stop karo..
+->If thread stop forcefully it may leave things in inconsistent state and its affect
+   - Data Integrity
+   - Lead Open connection
+   - Half Operation
+
+🔹InterruptedException:- Image:-InterruptedException
+-> code example com.Interrupts.Code2
+   thread 1 e thread 2 ne interrupt mokalyu so have thread 2 stop thai gayu toh e thread 1 ne kai rete khaber padse?
+   so thread 2 ma je method ne interrupt mokalyu hase e InterruptedException karse it means ene interrupt accept karyu
+   stop thaai gayu..work and thread 1 ma method hase jema catch hase so ema idea avi jase ke interrupt ayvu che
+
+
+Interrupts have two methods:-
+isInterrupted:-check the interrupt flag is set to true or set to false
+Interrupted:-check the flag and resert it (recommmended when throwing InterruptedExceptions)
+             ex.   if(Thread.interupted()){//read the flag
+                throw new InterruptedException(); //reset it
+             }
+
+🔹SemaPhore:-
+  Semaphore restrict/Manage the usage of limited Resources
+when we use :-
+Scenario:- we have one application and from that we call one service and that service is slow service at one time max 3 thread request can process
+           so in semaphore we set the available permits to 3 max 3 permits is their so any thread can aquir that permit and access the service
+           so thread is call aquire() method if permits is available then semaphore give and that thread access that anf after using theat thread release()
+           that permit....and if permits is not available then that thread goes in blocked state after available of permit that thread can come out from block state
+Code:-com.Semaphore.Code1
+
+
+
+---------------------------------------
+🔹ForkJoinPool:-
+this is similer to ExecutorService.
+ExcecutorService is about having a thread pool that store the set of task that submit externally..
+                That store in some form of dataStructure mainly it is BlockingQueue
+                we define threadsize.. thread it takes tasks from blocking queue and run that..
+                again pickup one task then by thread then run that this is continue until there is a no longer task in blocking queue
+                In this if we use Callable then we store result in Future,,
+                Normal Execution:-
+                1.Submit the task
+                2.Exec the task
+                3.retrun result
+
+                Image:-ExcecutorService-1
+
+how it diff from ExecutorService??
+This same Execution is also in ForkJoinPool:-
+                1.Submit the task
+                2.Exec the task
+                3.retrun result
+🔹On two basis ForkJoinPool is diff from ExecutorService...
+  1.Task Producing Own Sub-Tasks also know as ForkJoin
+     this is optimize in form of problem where task is divided into more subtaks
+    FORK -> Divide in sub-task
+    JOIN -> Join the result
+     Example:-
+     we have 4 core CPU we have one big task so we divide that into 4 sub task and run 4 sub task in diff core
+     and after that combine that result..
+
+  2.Pre-Threading Queuing & Work-stealing Concept
+     fork join pool have this concept je ExecutorService jode nathi
+    🔹 Pre-Threading Queing:-
+       thread 1 pull task so they have own dequeu for that subtask and that is same for every task and their
+       subtask every thread have their own deque for mantaining their own sub-tasks..
+       Images:-PreThreadingQueue-1 & PreThreadingQueue-2
+       Advantage of Queue Per Thread:-
+       1.Just keep picking task from own queue
+       2.No blocking(Unless during stealing)
+       3.Easier Scheduling
+
+
+     🔹Work-stealing:-
+     Image:-work-stealing
+     thread 0 and thread 1 is take task from queue and they have own deque for their subtask
+     but thread 1 have too many subtask and thread 0 all sub task is finish so thread 0 is their and
+     make steal task from therad 1 and this is call work-stealing
+
+🔹 Ways To submit task:-
+    Execute Runnable :- execute(Runnable)
+    Submit Runnable  :- submit(Ruunable)
+    Submit Callable  :- submit(Callable)
+🔹 Call from non-fork/join clients:-
+  Image:-ForkJoinPoolClassMehotds  Code:-com.ForkJoinPool.Code1
+
+🔹 ForkJoinClass is a class built internally help us create kind of task which produce subtask
+
+🔹When we use ForkJoin Tasks:-
+  1.sync na hoy
+  2.shared variable na hoy thread vacche
+  3.code is not perform blocking IO operations
+  4.Are pure function and it is isolated
+
+🔹Fork-Join task is extends Future Class so some methods of future class is their..
+  Get the value Task:-
+  get()
+  get(TimeOut)
+
+  Completion(cancek or check status of the task):-
+  cancel()
+  isCancelled()
+  isDone()
+
+----------------------------------------------
+Phaser vs CountDownLatch vs CyclicBarrier:-
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------
+🔹SynchronousQueue:-
+  what is BlockingQueue:-
+  -> it is an queue or array of elements
+     example:- blockingqueue is a thread safe datastructure which can have multiple prod and consumer thread
+               all working at a same time
+               BlockingQueue is empty and consumer thread take from Queue then that is Blocked kasu nathi queue ma toh te automatically block kari dese..
+               During Put operation if BlockingQueue is full then it block producer thread for putting any element in queue
+ ->SynchronousQueue is same as BlockingQueue but with size of 1
+   image:-SynchronousQueue-1
+   in this SynchronousQueue we have single item slot
+   so produer directly give element to the consumer without stroring it into queue..
+   NOTE:- this is same as BlockingQueue but slight change in block operation
+          in consumer that is same if empty then it is block jo te queue mathi take karse toh
+          in producer time if their is a empty slot means producer is put something but in that time also producer is block
+             jyare consumer avse nai tya sudhi bhale space khali hoy kasu nai put karva dey...
+ ->So in general Queue peak,iterate and methods are there
+  But in this
+  1.No peek method
+  2.no Iterate method
+  because size is one so thats why
+
+----------------------------------------------
+🔹Adder and Accumulator classes:-
+🔹 Problem
+In a multithreaded program, if many threads frequently update a shared counter (e.g., int count++), this causes contention because:
+All threads compete for the same atomic variable.
+Even with AtomicInteger.incrementAndGet(), under very high contention, performance can degrade because all updates hit the same memory location.
+
+🔹 Solution
+Java provides Adder and Accumulator classes (since Java 8) in java.util.concurrent.atomic to solve this scalability issue.
+
+✅ Rule of Thumb:
+Use AtomicInteger / AtomicLong for light concurrency. Code:-com.AdderAndAccumlator.Code1
+Use LongAdder for highly concurrent counters.          Code:-com.AdderAndAccumlator.Code2
+Use LongAccumulator for custom reductions across threads. Code:-com.AdderAndAccumlator.Code3
+
+Accumulator is same as a LongAdder but it is a more genreic version of adder in Accumulator we pass also our lambda funciton..
+
+note of caution ⚠️
+->we use this Adder and Accumlator so note that below points:-
+   - best suited for write heavy operations
+   - order of operations is not deteminstic
+   - accumulation function should not have side-effects
+   - accumulation function may be applied repeatedly
+
+🔹Deterministic vs Non-Deterministic
+Deterministic order → Always happens in the same sequence.
+Example:
+1 + 2 + 3 + 4   // always left to right
+You know the exact order of operations.
+Non-Deterministic order → You don’t know the order, because multiple threads are updating at the same time.
+
+---------------------------------------------
+Guava Library - Striped Locks in java
+Problem:-
+we have single lock and multiple object in that shared resouces and
+thread will waiting even though they need to access different object because lock is aquire by one thread at a time ..
+
+Solution:-
+1 Lock per Object..
+but if we have 1000 objects then it lead to much memory consumptions... if more object sis added it will need more locks..
+
+Best Solution:-
+we make group of objects group 1 group 2 ..like and put lock on them.. this is middle solutin,,
+and this is called striped locks..
+image:-StipedLocks..
+🔹summary:-
+ Many Locks=More Memory,good throughput
+ Less Locks=Better Memory,more contenation
+ Striped Locks=Middle Ground
+ IMP:-Choose obj to retrive the lock
+     need to have hashcode and equals
+     Guvava library also allow striped versions of lock,semaphore and reaWriteLocks
+
+-----------------------------------------------
+🔹 How to detect and resolve deadlock in java :-
+ha
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

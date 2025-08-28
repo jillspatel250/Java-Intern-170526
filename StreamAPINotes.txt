@@ -1,0 +1,58 @@
+what is diff between stream API(feature intoduced in java 1.8) vs IOStream
+streams are related to collection framework(group of objects)
+these stream are very different to IOStream
+-- IOStream are use of process the sequence of data(in simple term use for
+    data reading and writing)
+-- StreamAPI this is use for process group of object(in simple term use for
+    processing collection)
+   StreamAPI is basically  perfrom bulk operation and process the object of collection
+   StreamAPT reduce the code length
+
+
+-- Stream<> is a interface
+
+-- Methods filter and map
+1.filter(Predicate)
+- filter take input as a Predicate(means boolean value function)
+- predicate return true or false based on that filter filters elemets.
+- predicate one kind of interface
+ filter(e->{
+ e>100 //return true or false
+ })
+
+2.map(Function)
+- we want to perfrom operation on each element then we use map
+- example arr[]={2,3,4,4,5,6} we want to add +10 in each element then we dont able to
+  use filter in that we must use map
+
+-map take input as a function
+- function return value
+- predicate retrun true or false
+
+3.collect
+- this collect stream output and print in anyform based on option
+example:-
+    List<Integer> output2 = numbers.stream().map(i -> i * i).collect(Collectors.toList());
+    we collect output of each number squared and print as a list and return it
+
+4.min(),max(),sorted() method
+5.get() when we have single element then we use get method insted of foreach to print that
+example
+number.stream().min((x,y)->x.compareTo(y).get());
+here we use .get() insted of collection because in this only one value is there thats why
+
+
+----------
+The :: is called the method reference operator.
+It's a shorter and cleaner way to write a lambda expression when you're just calling an existing method.
+🔍 This:
+output.stream().forEach(e -> System.out.println(e));
+Means: for each element e in the stream, call System.out.println(e)
+
+✅ Can be replaced by:
+output.stream().forEach(System.out::println);
+
+Lambda	                    Method Reference
+s -> s.toLowerCase()    	String::toLowerCase
+n -> Math.sqrt(n)	        Math::sqrt
+a -> a.someMethod()	        ClassName::someMethod

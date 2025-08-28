@@ -17,7 +17,7 @@ public class UserService2 {
     public String birthDate(int userId){
         //this is all for understanding purpose
         // Date birthDate=birthDate(int id);
-        SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd");
+       // SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd");
         // return df.format(birthDate);
         return "s";
     }

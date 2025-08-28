@@ -1,0 +1,23 @@
+IOStreams:-
+we control and manage and prefrom operation on input output data
+streams:-flow of data
+Buffer:-buffer is a memory object that holding data for sometime
+        example:- PC1 is faster and PC2 is slower and we transfer data
+                  PC1 to PC2 so it send very fast so PC2 not control that
+                  so that is not happend we put one buffer between that
+                  so PC1 put data on buffer and PC2 take it slowlly based
+                  on their capcaity
+Majorlly Java Provide 2 type of classes for implementing IOStream .
+ByteStream Class:-
+InputStream
+OutputStream
+
+CharacterStream Class:-
+Reader
+Writer
+
+--NOTE:- WE only check Wrapper class type not primitive type
+if we need to check b type so using autoboxing we need to convert it into Wrapper class then we check
+int b;
+Integer boxing=b;
+System.out.println(boxing.getClass().getName());

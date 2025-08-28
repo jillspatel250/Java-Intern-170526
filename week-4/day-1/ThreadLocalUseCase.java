@@ -1,5 +1,3 @@
-package com.threadLocal;
-
 //ThreadLocal usecase:1 web server request
 //we have fourse services and each service want to know which use made a request
 //so 1st option is:- pass user to one service to another service

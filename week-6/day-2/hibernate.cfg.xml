@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.Driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/myhiber</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">Jills@2022</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property><!--  here we define which database language hibernate is use-->
+        <property name="hbm2ddl.auto">create</property><!-- here we define  hibernate automatic table ne create kari dey only we define map hibernate automatic create kari dey so thats why we set this .. table nai hoy toh j create thase baki nai thayy -->
+<!--        <property name="hbm2ddl.auto">create</property> here we use create then darek vakhate new table ceate thase. delete thase create thase evu thaya karse thats why we use update  -->
+   <property name="show_sql">true</property> <!--  je sql query hibernate run karse internally e apdne dekhavi joiee toh apde e property ne set karyu che -->
+
+<!--        now hibernate is understand accha mari jode ek class che jene mare map karvani che so e class ma jaine Annotation jose..-->
+        <mapping class="FirstHibernateProgram.Student"/>
+        <mapping class="FirstHibernateProgram.Address"/>
+        <mapping class="OneToOneMapping.Answer"/>
+        <mapping class="OneToOneMapping.Question"/>
+        <mapping class="OneToManyMapping.Questions"/>
+        <mapping class="OneToManyMapping.Answers"/>
+        <mapping class="ManyToMany.Project"/>
+        <mapping class="ManyToMany.Employee"/>
+
+
+
+
+
+
+    </session-factory>
+</hibernate-configuration>

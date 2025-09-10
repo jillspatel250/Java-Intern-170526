@@ -1,28 +1,26 @@
-package OneToManyMapping;
+package FetchTechnique;
 
 import jakarta.persistence.*;
 
 import java.util.List;
 
-import Cascading.Answers;
-
 @Entity
-public class Questions {
+public class Que {
     @Id
     @Column(name = "question_id")
     private int questionId;
     private String question;
 
-    @OneToMany(cascade = CascadeType.ALL) //one quesion have many ans
-   private List<Answers> answers;
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER) //one quesion have many ans
+    private List<Ans> answers;
 
 
 
-   public Questions(){
+    public Que(){
         super();
     }
 
-    public Questions(int questionId, String question, List<Answers> answers) {
+    public Que(int questionId, String question, List<Ans> answers) {
         this.questionId = questionId;
         this.question = question;
         this.answers = answers;
@@ -44,11 +42,11 @@ public class Questions {
         this.question = question;
     }
 
-    public List<Answers> getAnswers() {
+    public List<Ans> getAnswers() {
         return answers;
     }
 
-    public void setAnswers(List<Answers> answers) {
+    public void setAnswers(List<Ans> answers) {
         this.answers = answers;
     }
 }

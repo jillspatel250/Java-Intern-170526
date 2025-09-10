@@ -1,25 +1,24 @@
-package OneToManyMapping;
+package FetchTechnique;
 
-import Cascading.Questions;
 import OneToOneMapping.Question;
 import jakarta.persistence.*;
 
 @Entity
-public class Answers {
+public class Ans {
 
     @Id
     @Column(name = "answer_id")
     private int answerId;
     private String answer;
 
-    @ManyToOne()//many answer have one ans
-    private Questions question;
+    @ManyToOne //many question have one ans
+    private Que question;
 
-    public Answers(){
+    public Ans(){
         super();
     }
 
-    public Answers(int answerId, String answer) {
+    public Ans(int answerId, String answer) {
         this.answerId = answerId;
         this.answer = answer;
     }
@@ -40,11 +39,11 @@ public class Answers {
         this.answer = answer;
     }
 
-    public Questions getQuestion() {
+    public Que getQuestion() {
         return question;
     }
 
-    public void setQuestion(Questions question) {
+    public void setQuestion(Que question) {
         this.question = question;
     }
 }

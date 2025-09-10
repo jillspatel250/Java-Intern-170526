@@ -1,6 +1,6 @@
-package OneToManyMapping;
+package Cascading;
 
-import Cascading.Questions;
+import OneToManyMapping.Questions;
 import OneToOneMapping.Question;
 import jakarta.persistence.*;
 
@@ -12,7 +12,7 @@ public class Answers {
     private int answerId;
     private String answer;
 
-    @ManyToOne()//many answer have one ans
+    @ManyToOne(mappedBy ="answer")//many answer have one ans
     private Questions question;
 
     public Answers(){

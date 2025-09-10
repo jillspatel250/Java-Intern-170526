@@ -1,10 +1,10 @@
-package OneToManyMapping;
+package Cascading;
 
 import jakarta.persistence.*;
 
 import java.util.List;
 
-import Cascading.Answers;
+import OneToManyMapping.Answers;
 
 @Entity
 public class Questions {

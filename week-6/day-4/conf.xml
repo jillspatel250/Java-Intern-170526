@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/p
+           https://www.springframework.org/schema/beans/spring-p.xsd">
+
+<!--    this is our bean-->
+    <!-- we use setter injection -->
+<!--    filed ne property ni madad thi set karyu hase so it means we use setter injectioin-->
+<!--    and apde spring container ne metadata api dedho che toh ani madad thi je value ke e bean ni depencency je hase te madi jase-->
+<!--    so jyare bhi apdne object ni jarur padse tyare e ready to use karine rakhse IOC container so we can use that-->
+<!--    NOTE:-WE CAN INJECT VALUE IN OBJECT USING 3 WAYS:-
+         1. value as an attribute
+            <property name="studentId">
+            <value> 10291 </value>
+            </property>
+
+         2. value as an element
+            <property name="studentId" value="22344"> </property>
+
+         3. using p schema
+         <bean class="com.springcore.Student" name="student1" p:studentId="24234" p:studentName:"Ram Singh" p:studentAddress:"Surat"/>
+
+          -->
+
+
+    <bean class="org.example.Student" name="student1">
+        <property name="studentId" value="22344"> </property>
+        <property name="studentName" value="Jills Patel"> </property>
+        <property name="studentAddress" value="Einfochips Ranta office,ahemdabad"/>
+    </bean>
+
+<!--    this is my second bean of student class -->
+    <bean class="org.example.Student" name="student2">
+        <property name="studentId" value="170526"></property>
+        <property name="studentName" value="Paresh patel"></property>
+        <property name="studentAddress" value="Surat"></property>
+    </bean>
+
+
+</beans>
+
+

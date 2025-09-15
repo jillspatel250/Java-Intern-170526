@@ -1,0 +1,9 @@
+in this pakcgae we learn lifecycle of beans ..
+init() and destory() methods in different ways
+1.using XML in <bean> tags
+2.using interfaces
+3.using annotations
+
+1st implementation in Pespsi class
+2nd implementation in Samosa class
+3rd implementation in Maggi class

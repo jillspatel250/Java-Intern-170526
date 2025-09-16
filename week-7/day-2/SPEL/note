@@ -1,0 +1,30 @@
+Spring Expression Language (SpEL)
+→ It allows us to evaluate expressions at runtime (like calculations, method calls, accessing bean properties, system values, etc.).
+-> A powerful expression language in Spring to inject dynamic values (math, methods, bean properties, system values) inside configuration.
+
+two ways to use that :-
+1.@Value("#{22+22}") //so this set the value 44 in filed
+
+2.we use SpelExpressionParser class to make parser and then make expression and evaluate that ..
+  SpelExpressionParser parser=new SpelExpressionParser();
+          Expression exp=parser.parseExpression("22+22");
+          System.out.println(exp.getValue()); // print 44
+
+---------
+how to invoke static method and variable using SPEL:-
+1.how to call static method in SPEL:-
+ format :- T(Class).method(params)
+ exmample:-we want to call sqrt method so we write
+ @Value("#{T(java.lang.Math).sqrt(144)}") //this set value 12 to that atttribute
+
+2.how to access static variables in SPEL:-
+ format: T(class).variable
+
+3.How to set Object in Variable Usinf SPEL:-
+ format:- new Object(value)
+
+-----------
+Boolean type with SPEL:-
+@Value("#{}") ama {} evu expression lakhvanu je resolve thai ne true ke false return kare so e automatic e boolean variable ma jatu rehse
+example:- @Value("#{ 5 > 3 }") //so this return true so true store thai jase
+          @Value("#{ 5 - 10 > 3 }") //so this return false so false store thai jase

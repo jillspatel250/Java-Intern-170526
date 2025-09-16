@@ -1,0 +1,3 @@
+stereotype = a shortcut annotation for making a class a Spring Bean.
+so apde pehla use karta bean and xml file ma lakhta and ene leta but using annotation we use that in simple way
+without creating beans in xml file

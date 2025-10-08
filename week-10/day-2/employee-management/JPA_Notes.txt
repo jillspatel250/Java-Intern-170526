@@ -1,0 +1,42 @@
+
+This is small project we make 
+
+
+What is JPA?
+-------------
+JPA (Java Persistence API) is a specification used to map Java objects (entities) to database tables.
+It allows developers to perform database operations using Java classes instead of writing SQL manually.
+
+Why use JPA?
+-------------
+1. Reduces boilerplate code.
+2. Makes your app database-independent.
+3. Automatically manages CRUD operations.
+4. Supports relationships like One-to-One, One-to-Many, etc.
+
+How JPA works:
+--------------
+JPA uses an ORM (Object Relational Mapping) tool like Hibernate.
+When you save an object, JPA translates it into an SQL INSERT/UPDATE command and stores it in the database.
+
+Example:
+--------
+Employee emp = new Employee("Jills", "IT", 50000);
+employeeRepository.save(emp);  --> this automatically inserts a record in the employees table.
+
+Use Cases:
+-----------
+- Building CRUD web apps (Blog, User Management, Inventory, etc.)
+- Data persistence in microservices.
+- Any project needing database interaction.
+
+Common Annotations:
+-------------------
+@Entity       -> Marks a class as a database entity.
+@Table        -> Specifies table name.
+@Id           -> Marks the primary key.
+@GeneratedValue -> Auto-generates primary key.
+@Column       -> Maps fields to columns.
+@Repository   -> Marks a repository layer.
+@Service      -> Marks a service layer.
+@RestController -> Marks a controller to handle REST APIs.

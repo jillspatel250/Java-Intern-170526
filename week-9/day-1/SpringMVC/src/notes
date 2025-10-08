@@ -1,0 +1,533 @@
+Spring MVC:-model view and SpringMVC.controller
+Spring MVC follow Model View Control Pattern..
+A spring MVC is sub Framework of Spring Framework which is used to build a web application..
+It build on the top of Servlet API.
+means Spring MVC is mainly based on Servlet API..
+Simple term:-
+Model -> Data
+View -> Presentation layer(je apde dekhadvu hoy e) and here we display process data using JSP je servlet e karyu hase Using JSP
+Controller ->app na flow ne control kare like servlet (ke control koni jode javanu che e..)
+            Interface b/w model and view.
+            example:- here we use All processing part using sevrlet
+NOTE:-
+controller means handler e request kon handle karse so we define controller using 2 ways
+1.Use servlet ..
+2.we make our own class and make that @Controller ...
+
+Spring MVC implements all the basic features of a core Spring Framework like Inversion of Control,DI
+
+Why Spring MVC?
+1.Seperate each role model,view ,Controller etc.
+2.It Provide Powerful Configuration
+3.It is sub framework of Spring Framework .Use of Spring core Feature like IOC etc..
+  and IOC ne e badha thi lossely coupled rehse project so e bhi benifit rehse thodo..
+4.Rapis Application Development..
+5.Spring MVC is Flexible,easy to test and much features..
+
+MVC Design Pattern:-
+ways to organize the code in our application
+Image:-MVCdesignPattern-1 and MVCdesignPattern-2
+
+working of Spring MVC:-
+Image:-MVCworking
+MVC working on client server arch.
+
+first request goes to Front Coontoller(DispathcerServlet)..
+then delegate request is goes to SpringMVC.controller and SpringMVC.controller return name of view and model(data)
+NOTE:-SpringMVC.controller 2 kam kare data pacho apde process karine and name of view ape ke kayo view batadvano che
+so e data ne dynamically e JSP or other .. na madad thi page ma nakhi ne e view(page) ne render kariee
+So SpringMVC.controller send name of view and data model to front SpringMVC.controller and front SpringMVC.controller take help of view resolver
+and ena madad thi khaber padse ke kayu template dekhadvu che so front SpringMVC.controller view resolve ni help thi model(data) ne
+View template ma fit karse and return control to front SpringMVC.controller
+
+Practical Implementation:-
+Five Step are there:-
+1.Configure the dispathcer Servlet in web.xml
+2.Create Spring Configuration file
+3.Configure View Resolver
+4.Create Controller
+5.Create a view to show(page)
+
+
+1st we configure Dispatcher Servlet In web.xml:-
+<servlet>
+    <servlet-name>spring</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>spring</servlet-name>
+        <url-pattern>/</url-pattern> // means badhi badhi request ne handle karse..
+  </servlet-mapping>
+
+2nd Create Spring Configuration file:-
+  NOTE:-standard-file name :- servletName-servlet.xml and IOC automatic detect kari lese jo aa pattern ma hase toh
+  so we make file spring-servlet.xml
+
+3rd Configure View Resolver:-
+we use InternalResourceViewResolver and ena jode 2 property che prefix and suffix so we set that..
+  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" name="viewResolver">
+        <property name="prefix" value="/WEB-INF/views"/>
+        <property name="suffix" value=".jsp"/>
+  </bean>
+  so example SpringMVC.controller send model(data) and view name so e view resolver jode jase
+  example SpringMVC.controller give "index"
+  sp view Resolver path banavse like :- /WEB-INF/views/index.jsp and e page pachi return thase front SpringMVC.controller ne
+
+4th Create Contoller:- to define SpringMVC.controller use @Controller annotation
+@Controller
+public class HomeController {
+
+// /home per req avse toh aa controller "index" return karse and pachi view resolver thi apde
+  /WEB-INF/views/index.jsp return karse and e front controller dekhase user ne ..
+ @RequestMapping("/home")
+    public String Home(){
+        System.out.println("this is home url");
+        return "index";
+    }
+}
+------
+@RequestMapping Request Mapping Annotation:-
+this is use for mapping url to handler kayu url hit thayy toh karyu handleer run karavu che ..
+
+and we use this on method and on entire class also..
+when we apply annotation on class like so direct we not access /home
+we need to first /first/home then we access home url so class ni under je url hase e class url na reletive ma work karse ..
+@Controller
+@RequestMapping("/first")
+class{
+
+@RequestMapping("/home")
+method1(){
+}
+
+}
+
+if we need to speify request method ke aa type ni req ave toh j aa handler run..
+@RequestMapping(path="/home",method= RequestMethod.GET) so we define like this ..
+
+
+----------------------------
+Now we see how to send dynamic data from controller to view :-
+NOTE:- application ni under 2 type thi data we send..
+1.Frontend to backend
+2.Backend to frontend
+
+1.Static (ex.html)
+2.Dynmic (ex. JSP)
+
+so in this we understand two concept:-
+1.How to send data from controller to view (backend to frontend)
+2.hOW to send data from view to controller (frontend to backend)
+
+Sending data from controller to view:-
+we have two objects to do that.
+1.Using Model Object (Ani under data rakhi ne view sudhi lai jai sakie..)
+2.Using ModelAndView Object
+
+1.using Model Object
+ addAttribute(String key,Object value)
+
+2.using ModelAndView
+  addObject(String key,Object value)
+
+Now using this method we set data.. now how we get in Views file ..??
+so that data is we get using HttpServletRequest
+use Object data= request.getAttribute("key_name");
+
+NOTE:-
+1.<% ... %> → Scriptlet
+Used to write raw Java code inside JSP.
+Example:
+<%
+   String city = "Mumbai";
+   int age = 25;
+%>
+<h1>Welcome</h1>
+
+2.<%= ... %> → Expression
+  Used to directly output a value into HTML (shortcut for out.print(...)).
+  Example:
+  <% String city = "Mumbai"; %>
+  <h1>City: <%= city %></h1>
+
+----------------------------
+1.Using Model object
+controller ni under je apde method use kariee view return karva eni under j Model model use karine..
+ public String Home(Model model){
+        System.out.println("this is home url");
+
+        //now one data add in model and we get that data in servlet Request jyare koi /home fire karse toh req jode aa bhi jase j..
+        model.addAttribute("name","Jills Patel");
+        model.addAttribute("id",170526);
+
+        return "index";
+    }
+and getting time we use like this :-
+Stirng name=(String)request.getAttribute("name");
+
+2.Usind ModelandView object
+so in that we dont pass in method like Model obj
+we need to create ModelandView object and ej apde return karvu padse controller ma like this
+
+@RequestMapping("/help")
+public ModelAndView help(){
+        ModelAndView modelAndView=new ModelAndView();
+
+        //in this we set 2 thing first data je apde dynamically mokalvo che and view name
+        //setting the data
+        modelAndView.addObject("name","jills");
+
+        //setting the view name
+        modelAndView.setViewName("help");
+
+        return  modelAndView;
+}
+
+--------------------------------------
+we use like this kind of tags:-
+<% %> AND <%= %> but that is too much headache and not good and suitable ..
+
+So we use JSP Expression Language:-
+we print dynamic data using JSP Expression Language..
+SEE first help.jsp and help2.jsp
+how we transfrom..
+
+and we directly access variable or data which coming from request je controller mokle che
+only we need to apply <%@ page isELIgnored="false" %> this tag
+by default isELIgnore=true it mesns Expression language ignore thase so we set to false so
+now out code understand expression language ...
+
+------
+now if single var is their then we print directly like ${var_name}
+but if we have array and groups of data so how we do ??
+So we use JSP JSTL ... we first attach that dependency in pom.xml and use that after
+JSTL (JavaServer Pages Standard Tag Library) is a set of ready-made JSP tags that help you write JSP pages without mixing too much Java code inside <% ... %> scriptlets.
+Before JSTL, people used raw Java code inside JSPs like:
+<%
+   for(String f : friends) {
+       out.println("<h1>"+f+"</h1>");
+   }
+%>
+
+With JSTL, the same becomes cleaner:
+<c:forEach var="f" items="${friends}">
+   <h1>${f}</h1>
+</c:forEach>
+
+NOWWWW:-
+we see how to send data from controller to view Using Model and ViewAndModel objects ..
+2.Now we see HOW TO SEND DATA FROM VIEW TO CONTROLLER.
+ 1.Using HTML form (form submit thayy etle e data controller jode..)
+ 2.Using url(url ma data rakhine backend ma lai javu)
+ ...
+
+Image:-ViewToControllerDataTransfer
+we send data to controller je form ma submit karyu hase
+and controller jode e data HttpServletRequest na obj na form ma ave ...
+and from that obj we get data
+MethodS:- how we get from that obj
+1.Using request.getAttribute("var_name");
+2.Using Annotation
+  - @RequestParam  //ama badhi filed pe lagavu padse means ek ek karine avse
+  - @ModelAttribute  //ama badho data ek sathe j avi jase toh aa annotation ek j varr use karvu padse ..
+
+
+Practical Example View to Controller data sned:-
+we make Contact.jsp jeni under form che and we make ContactController je handle karse request..
+and when form submit button press thase evu j views mathi data controller per jato rehse that approch..
+
+and when we submit data so e processform jode jay che controller and tya we use
+techniques to fetch the data je reuest ma ayi hase
+so general we use like
+1.HttpServletRequest request and in that we use request.getAttribtue like we do in servlet..
+@RequestMapping(path="/processform",method = RequestMethod.POST)
+    public String processForm(HttpServletRequest request){ //request obj avse toh ene laine karsu print ne process je karvu hase te
+        String email=(String)request.getParameter("email");
+        System.out.println(email);
+        System.out.println("Process Form is calling..");
+        return "about";
+    }
+but we use Annotation:-
+1.@ReqyestParams
+  views mathi data one by one filed ne access karva we use
+  @RequestParams("filed_name"   type_of_filed   apde_je_name_thi_e_filed_ne_use_karvu_che_e_name)
+2.@ModelAttribute  MOST IMP and very usage ...
+  this we use in two ways
+  1.method ni under (@ModelAttribute) in this that use to data binding view mathi je data avse ene model ni filed jode bind kari dese ..
+  2.Method ni uper  in this use for adding common data in model so badha page per aa common data avse..
+  @ModelAttribute
+    (){
+    }
+    @ModelAttribute (on a method) runs before every request handler in that controller.
+    The data added (Header, Desc) is automatically added to the Model for every JSP rendered.
+    But JSP will only show it if you explicitly reference ${Header} and ${Desc}.
+
+-------------
+Now in this we implement one module registration module we implement MVC now we add
+Spring ORM to add that data in database ..
+image:-SpringMVC+SpringORM
+ama we use EntityManager...
+
+
+
+
+
+
+
+
+
+
+
+------------
+Redirecting in Spring MVC:-
+1.General way usinfg HttpServletResponse response
+2.Using redirect Prefix
+3.using redirectView
+
+1st way is :- General way usinfg HttpServletResponse response
+            but that we not use when we use MVC so we use that MVC feature if servlet nu j
+             use karvu hot toh why we use MVC..
+ @RequestMapping("/one")
+     public String one(HttpServletResponse response) throws IOException {
+         System.out.println("this is one handler");
+         response.sendRedirect("enjoy");
+
+     }
+
+2nd way is :- redirect Prefix
+@RequestMapping("/one")
+   public String one(){
+         System.out.println("this is first handler");
+         return "redirect:/enjoy"; //now when request is in /one then e after that all process enjoy per redirect thai jase
+         //so example if we need to throw errror page or success page after some processing or some filed if we knoe error avi sake
+         //so in that case we redirect to that route directly..
+     }
+
+3rd way is :- redirectView
+ @RequestMapping("/one")
+    public RedirectView one(){
+        System.out.println("this is first handler");
+        RedirectView redirectView=new RedirectView();
+        // redirectView.setUrl("https://www.google.com");
+        redirectView.setUrl("enjoy");
+        return redirectView;
+    }
+
+
+----------------------------------------
+SearchApplication for better understanding of redirection..
+Foldername:-SearchApplication-SpringMVC
+
+--------------------------------------------
+Handling complex form in one line:-
+Image:-complexform.png
+Foldername:-SearchApplication-SpringMVC
+           in that we learn this concept we make form called complex_form.jsp and for controller of this
+           concept we make seperate package called HandleComplexFrom
+
+		we write post ke jena thi submit thayelo data url ma na jay and security thi send thayy ..
+		<form action="handleform" method="post">
+so example in student class aa field che so now aa form mathi kai rete set karsu and khaber padse @ModelAttribute??
+  private Address address;
+
+  so apde toh je form ma apde field nu name="username" am karyu hoy e apde class ma pan same name
+  thi field define kariee toh ene khaber padi jay and bind kari dey but ama kai rete
+
+ 							          <input name="address.street" type="text" class="form-control" placeholder="Enter street"/>
+ 							        </div>
+ 							         <div class="form-group">
+                                     	<input name="address.city" type="text" class="form-control" placeholder="Enter city"/>
+                                     </div>
+  	so ani under we use name="address.steet" so aa rete apsu toh
+
+
+
+--------------------------------------------
+Handling Errors in Spring MVC:-
+now we have like example:- we have complex form or any form
+eni under we set Name is String and user enter Int like 22223 so they see
+HTTP Status 400 – Bad Request and more things and e user ne khaber nai pade so how we say user to aa error che
+specifically you enter number in that jevu apde exception handling ma karta ..?
+
+WE USE:-
+BindingResult result
+  public String formHandler(@ModelAttribute Student student, BindingResult result){
+        if(result.hasErrors()){//jo koi error hase toh pachu complex_form ma j pacha lai jaisu..
+            return "complex_form";
+        }
+and in form if we prrint that error so we use
+spring form tag library documentation :-
+first we add <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+and jya apde error dekhadvi hoy form ma tya we use form error tag
+<!-- student path per je bhi error avse e badhi ahiya print thai jase -->
+<form:errors path="student.*" />
+
+like Image:-BindingResult
+but ema e error ochi ave che pan e bhi user ne samaj na pade e rete ave che so we can give our
+custom errror msg also
+so go to line no :- 454
+
+
+----------------------------------------
+How to handle Static file resources in Spring MVC?
+what is the meaning of static file resouces?
+apda project ma thodi css file,js file,image hoy toh ene apde Spring MVC ma kai rete serve karsu??
+Simple way :-
+in one line how we configure all this things..
+First we make resources folder in WEV-INF and e resources ni under badha public resource like css,js,images rakhsu
+
+then declare tags in /WEB-INF/spring-servlet.xml
+ <mvc:annotation-driven/> //this means we use annotation so ene scan karva we need to define this tag
+    <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/"/>  //this tag use to tell mvc ke kayi location ma
+                                                                            //resource padya che and use karsu tyare kayi ritni mapping thi use karsu
+                                                                            // like css file use karvi che toh we writ first
+                                                                            // /resources/css toh j access thase
+    NOTE:-
+    if we implement configuration without xml file
+    so for this we use
+    @@EnableWebMvc annotation
+---
+Extra if we use java class based cong so our xml file convert like this
+
+@Configuration
+@EnableWebMvc   // same as <mvc:annotation-driven/>
+@ComponentScan(basePackages = "your.package.controllers")
+public class WebConfig implements WebMvcConfigurer {
+
+    // Same as <bean class="InternalResourceViewResolver"/>
+    @Bean
+    public InternalResourceViewResolver viewResolver() {
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        resolver.setPrefix("/WEB-INF/views/");
+        resolver.setSuffix(".jsp");
+        return resolver;
+    }
+
+    // Same as <mvc:resources/>
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**")
+                .addResourceLocations("/WEB-INF/resources/");
+    }
+}
+---
+   then we define JSTL library tag in home.jsp ke apde java tag use karsu toh
+   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+then we link our resoucrs css and js and all
+
+
+--------------------------------------------------
+File Uploading in Spring MVC:-
+
+
+
+
+--------------------------------------------------
+@PathVariable Annotation:-
+it is usded to bind method parameter to URI(Uniform Resource Identifier) template variable
+je pan parameter method jode hase ene URI templetate ma bind karai dese..
+
+@RequestMapping("/users/{id}")
+public String handler(@PathVariable("id") String id) {
+    return "User ID: " + id;
+}
+{id} je pan user nakhse like /users/170 toh 170 bind thai jase method ni id var ma and return thase User ID: 170
+/users/{id} → is a URI template.
+{id} → is a placeholder (variable) in the URI that will be replaced with actual value.
+If you hit /users/101 → {id} = 101.
+
+id is bind with {id} so URI ma je avse e bind thai jase ani under ...
+
+if we want multiple binding means aa ritnu hoy url
+http://localhost:8000/project/book/{id}/{booknumber}
+@RequestMapping("/users/{id}/{booknumber}")
+public String handler(@PathVariable("id") String id,@PathVariable("booknumber" String bookno)) {
+    return "User ID: " + id + "Book no is "+ bookno;
+}
+
+practical Implementation:-
+Folder:-SearchApplication-SpringMVC
+in searchController we define one handler called getUserDetails() in that we implement this
+
+-----------------------------------------------------
+Exception Handling in SpringMVC:-
+so if exception ave so our is break and stop executing...
+and by default spring nu page hoy ema error show thayy
+But apde apdu joiee che ke aa error ave toh aa page dekhay ne all...
+there is two method to implement exception handling:-
+1.within controller
+  meanse  ej controller fire karsu ne error ema j avse toh j handle thase
+2.Centeralized jetla pan controller hase package ma
+  badha ma exception handler thai jase
+   ->We make Class jeni under badha excpetion lakhya hase
+
+
+practical Implementation:-
+1.
+Folder:-SearchApplication-SpringMVC
+in searchController we make one handler called exceptionHandlerNull()
+and we have one handler call check() aa ni under thi we throw error and e
+exceptionHandlerNull() handle karse and apdne apdu customize page apse ...
+
+
+2.We make class called
+
+
+
+
+
+
+
+--------------------------------------------------
+Interceptor in Spring MVC:-
+Image:-Interceptor-1 amd Interceptor-2
+request user e fire karyi and e handler jode jay ena pehla kasu like
+validation,filteration karvu hoy apde evu kam hoy je handler na pehla karvu hoy
+so on that time we use Interceptor
+
+NOTE:-
+evu fix nathi ke spring interceptor only handler call thayy ena pehla j use kari sakiee
+apde after request means request pachi bhi use kari sakiee..
+and view render thayy ena pachi pan apde aa Interceptor use kari sakiee..
+
+So basically Interceptor we use in we have HandlerInterceptor Interface
+eni under aa 3 method che and badhi default che etle badhi override karvani jarur nai je handler banavu
+hoy e kariee toh ey chale
+preHandle() → before controller
+postHandle() → after controller, before view
+afterCompletion() → after view is rendered
+
+NOTE:-
+and request ayi apde ene je condition lagavine check karyu have apde ene agad forward na karvi
+hoy interceptor mathi so we return false after all validation and agad handler ne apvi hoy toh
+we return true..
+public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        System.out.println("this is prehandler...");
+        return true;
+    }
+
+we map our interceptor in xml file:-
+ama apde define karsu ke kaya url pehla apde aa interceptor chalavu che
+<mvc:interceptors>
+  <mvc:interceptor>
+  <!-- we write handler url ke kaya handler call thayy ena pehla interceptor chalavu che -->
+    <mvc:mapping path="/welcome" />
+  </mvc:interceptors>
+
+
+</mvc:interceptors>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

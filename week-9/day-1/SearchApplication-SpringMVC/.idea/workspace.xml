@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dbd95944-7fd4-496c-bdba-88e72824e81a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/src/main/java/feedback_app/FeedbackServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/src/main/webapp/FeedBack.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/src/main/webapp/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/src/main/webapp/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/src/main/webapp/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/src/main/webapp/links.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/src/main/webapp/script.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FeedBack_App_Servlet/src/note" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/Notes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/Cascading/CascadeExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/FetchTechnique/Ans.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/FetchTechnique/EagerLoading.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/FetchTechnique/LazyLoading.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/FetchTechnique/Que.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/FirstHibernateProgram/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/FirstHibernateProgram/FetchDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/FirstHibernateProgram/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/FirstHibernateProgram/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/ManyToMany/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/ManyToMany/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/ManyToMany/Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/ObjectStates/Certificate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/ObjectStates/StateDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/ObjectStates/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/OneToManyMapping/Answers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/OneToManyMapping/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/OneToManyMapping/Questions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/OneToOneMapping/Answer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/OneToOneMapping/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/java/OneToOneMapping/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hibernate-1/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWT_SpringBoot/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWT_SpringBoot/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWT_SpringBoot/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWT_SpringBoot/src/main/java/com/einfochips/JWT/JWT_SpringBoot/Security/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWT_SpringBoot/src/main/java/com/einfochips/JWT/JWT_SpringBoot/Security/AuthUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWT_SpringBoot/src/main/java/com/einfochips/JWT/JWT_SpringBoot/Security/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWT_SpringBoot/src/main/java/com/einfochips/JWT/JWT_SpringBoot/Security/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWT_SpringBoot/src/main/java/com/einfochips/JWT/JWT_SpringBoot/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWT_SpringBoot/src/main/java/com/einfochips/JWT/JWT_SpringBoot/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWT_SpringBoot/src/main/java/com/einfochips/JWT/JWT_SpringBoot/dto/LoginRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWT_SpringBoot/src/main/java/com/einfochips/JWT/JWT_SpringBoot/dto/LoginResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWT_SpringBoot/src/main/java/com/einfochips/JWT/JWT_SpringBoot/dto/SignupResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWT_SpringBoot/src/main/java/com/einfochips/JWT/JWT_SpringBoot/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JWT_SpringBoot/src/main/java/com/einfochips/JWT/JWT_SpringBoot/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Registation-Module-JAVA-Servlet-SessionManagament/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Registation-Module-JAVA-Servlet-SessionManagament/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Registation-Module-JAVA-Servlet-SessionManagament/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Registation-Module-JAVA-Servlet-SessionManagament/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Registation-Module-JAVA-Servlet-SessionManagament/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Registation-Module-JAVA-Servlet-SessionManagament/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Registation-Module-JAVA-Servlet-SessionManagament/src/main/java/Servlets/Register.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Registation-Module-JAVA-Servlet-SessionManagament/src/main/webapp/Signup.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Registation-Module-JAVA-Servlet-SessionManagament/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Registation-Module-JAVA-Servlet-SessionManagament/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ExceptionHandler/ExceptionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ExceptionHandler/MyExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interceptor/Contollers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interceptor/MyInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/handleComplexForm/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/handleComplexForm/FormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/handleComplexForm/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springSearch/SearchController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/complex_form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/exception_page.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/start.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/success.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/welcome.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Servlet/src/main/java/AttributeManagement/S1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Servlet/src/main/java/AttributeManagement/S2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Servlet/src/main/java/SessionManage/Request1Servlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Servlet/src/main/java/SessionManage/Request2Servlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Servlet/src/main/java/SessionManage/SuccessServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Servlet/src/main/java/URLRewriting/Servlet1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Servlet/src/main/java/URLRewriting/Servlet2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Servlet/src/main/java/servlets/FirstServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Servlet/src/main/java/servlets/SecondServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Servlet/src/main/java/servlets/ThirdServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Servlet/src/main/webapp/URLrewritingForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Servlet/src/main/webapp/css/formstyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Servlet/src/main/webapp/form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Servlet/src/main/webapp/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/.idea/SpringBoot.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/main/java/com/einfochips/E2EE/JournalApp/Repository/JournalEntryRepositiory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/main/java/com/einfochips/E2EE/JournalApp/Repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/main/java/com/einfochips/E2EE/JournalApp/Security/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/main/java/com/einfochips/E2EE/JournalApp/Services/JournalEntrySerivce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/main/java/com/einfochips/E2EE/JournalApp/Services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/main/java/com/einfochips/E2EE/JournalApp/config/SpringSecurity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/main/java/com/einfochips/E2EE/JournalApp/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/main/java/com/einfochips/E2EE/JournalApp/controller/JournalEntryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/main/java/com/einfochips/E2EE/JournalApp/controller/JournalEntryControllerV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/main/java/com/einfochips/E2EE/JournalApp/controller/PublicController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/main/java/com/einfochips/E2EE/JournalApp/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/main/java/com/einfochips/E2EE/JournalApp/entity/JournalEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/main/java/com/einfochips/E2EE/JournalApp/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/notes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringBoot/JournalApp/src/test/java/com/einfochips/E2EE/JournalApp/service/UserServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/NOTE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/main/java/com/spring/confWithoutXML/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/main/java/com/spring/confWithoutXML/JdbcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/main/java/com/spring/confWithoutXML/dao/RowMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/main/java/com/spring/confWithoutXML/dao/StudentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/main/java/com/spring/confWithoutXML/dao/StudentDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/main/java/com/spring/confWithoutXML/entites/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/main/java/com/spring/jdbc/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/main/java/com/spring/jdbc/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/main/java/com/spring/jdbc2/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/main/java/com/spring/jdbc2/dao/RowMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/main/java/com/spring/jdbc2/dao/StudentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/main/java/com/spring/jdbc2/dao/StudentDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/main/java/com/spring/jdbc2/entites/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringJDBC/src/main/resources/config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/SpringMVC/Model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/SpringMVC/controller/ContactController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/SpringMVC/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/SpringMVC/controller/ReController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/SpringMVC/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/java/SpringMVC/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/spring-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/about.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/contact.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/help.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/help2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/success.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/views/welcome.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpringMVC/src/notes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Springframe.../SpringBoot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate/Hibernate.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate/src/Notes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JDBC_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JDBC_2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/auto/wire/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/auto/wire/Emp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/auto/wire/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/auto/wire/annotations/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/auto/wire/annotations/Emp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/auto/wire/annotations/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/ci/Addition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/ci/Certi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/ci/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/ci/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/lifecycle/Maggi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/lifecycle/Pespsi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/lifecycle/Samosa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/lifecycle/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/lifecycle/note" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/standalone/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/standalone/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/stereotype/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/com/springcore/stereotype/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/org/example/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/org/example/collections/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/org/example/collections/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/org/example/ref/A.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/org/example/ref/B.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/java/org/example/ref/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/resources/Autowire1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/resources/Autowire2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/resources/StandaloneCollection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/resources/Stereotype.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/resources/config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/resources/config2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/resources/config3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/resources/lifecycleConf.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/main/resources/refConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/src/note" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/Autowire1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/Autowire2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/StandaloneCollection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/Stereotype.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/auto/wire/Address.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/auto/wire/Emp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/auto/wire/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/auto/wire/annotations/Address.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/auto/wire/annotations/Emp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/auto/wire/annotations/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/ci/Addition.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/ci/Certi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/ci/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/ci/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/lifecycle/Maggi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/lifecycle/Pespsi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/lifecycle/Samosa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/lifecycle/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/standalone/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/standalone/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/stereotype/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/com/springcore/stereotype/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/config2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/config3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/lifecycleConf.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/org/example/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/org/example/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/org/example/collections/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/org/example/collections/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/org/example/ref/A.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/org/example/ref/B.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/org/example/ref/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MavenProject-Durgesh-Lec6/target/classes/refConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NIO/DataSet/moved-Lesson-Plan.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NIO/lesson-planning-application.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Servlet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlet/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Servlet/src/Note" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlet/src/Note" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Servlet/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlet/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Servlet/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlet/src/main/webapp/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Servlet/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlet/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Servlet/src/main/webapp/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlet/src/main/webapp/menu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Servlet/src/main/webapp/service.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlet/src/main/webapp/service.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot/SpringBoot.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpringBoot/src/SprintFramewor.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/7.0.0-M9/spring-webmvc-7.0.0-M9.jar!/org/springframework/web/servlet/HandlerInterceptor.class" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="32osTDkhNGKZT6degebhMphoecd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Smart Tomcat.Tomcat: SearchApplication-SpringMVC.executor": "Run",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/jillspatel/Desktop/IntelliJ/SearchApplication-SpringMVC",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Tomcat: SearchApplication-SpringMVC" type="com.poratu.idea.plugins.tomcat">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="" />
+      <option name="contextPath" value="/SearchApplication-SpringMVC" />
+      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="extraClassPath" value="" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/11.0.11" />
+          <option name="path" value="$USER_HOME$/Downloads/apache-tomcat-11.0.11" />
+          <option name="version" value="11.0.11.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <module name="SearchApplication-SpringMVC" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dbd95944-7fd4-496c-bdba-88e72824e81a" name="Changes" comment="" />
+      <created>1758098265811</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758098265811</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+app:
+  message: "Running in DEV environment"
+  db-url: "jdbc:h2:mem:devdb"
+
+logging:
+  level:
+    root: INFO
+    com.example.demo: DEBUG

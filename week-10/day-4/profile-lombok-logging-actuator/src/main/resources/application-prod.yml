@@ -1,0 +1,11 @@
+server:
+  port: 9090
+
+app:
+  message: "Running in PROD environment"
+  db-url: "jdbc:mysql://prod-server:3306/proddb"
+
+logging:
+  level:
+    root: INFO
+    com.example.demo: INFO

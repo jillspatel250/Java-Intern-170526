@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: profile-lombok-logging-actuator
+  profiles:
+    active: dev
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,metrics,loggers

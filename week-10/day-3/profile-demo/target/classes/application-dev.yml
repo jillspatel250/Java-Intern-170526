@@ -1,0 +1,5 @@
+server:
+  port: 8081
+app:
+  message: "Running in DEV environment"
+  db-url: "jdbc:mysql://localhost:3306/devdb"
